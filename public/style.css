@@ -19,3 +19,65 @@ form div {
   margin: 1em;
   display: inline-block;
 }
+
+#container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+#iterator td {
+  border: 2px solid rgb(39, 22, 22);
+  width: 118px;
+  height: 66px;
+  border-radius: 50%;
+}
+
+tr:nth-child(even) {
+  height: 50px;
+}
+
+.inactive {
+  background-color: antiquewhite;
+}
+
+.active { 
+  background-color: rgb(197, 110, 110);
+}
+
+.snare {
+  background-color: rgb(197, 110, 110);
+}
+
+.kick {
+  background-color: rgb(70, 125, 214)
+}
+
+.floor {
+  background-color: rgb(58, 130, 62)
+}
+
+.rack {
+  background-color: rgb(178, 117, 80)
+}
+
+.hat {
+  background-color: rgb(166, 85, 224)
+}
+
+.ride {
+  background-color: rgb(22, 169, 226)
+}
+
+.crash {
+  background-color: rgb(170, 166, 158)
+}
+
+.invisible {
+  background-color: white
+}
+
+#drumbo {
+  background-color: rgb(143, 212, 212)
+}
+
