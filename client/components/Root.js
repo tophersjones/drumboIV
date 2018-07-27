@@ -4,6 +4,7 @@ import Sound from 'react-sound'
 import { connect } from 'react-redux'
 import InstButtons from './InstButtons'
 import { armInstrumentThunk, disarmInstrumentThunk, clearDrumboThunk } from '../store/instruments';
+import Instructions from './Instructions'
 
 class Root extends Component {
   constructor () {
@@ -207,7 +208,7 @@ class Root extends Component {
           </button>
         </div>
         <InstButtons />
-        <div>{this.state.activeCell + 1}</div> 
+        <Instructions />
       </div>
     )
   }
