@@ -3,6 +3,7 @@ import React from 'react'
 const Instructions = () => {
   return (
   <div id="instructions">
+    <br />
     <div>
     INSTRUCTIONS
     </div>
@@ -10,7 +11,7 @@ const Instructions = () => {
       1. Choose your instrument (Snare, Kick Drum...)
     </div>
     <div>
-      2. Click a cell once to arm the drum machine, twice to disarm
+      2. Click a cell once to arm the drum machine, click again to disarm
     </div>
     <div>
       3. Switch instruments to add as many as you'd like

@@ -208,6 +208,8 @@ class Root extends Component {
           </button>
         </div>
         <InstButtons />
+        <br />
+        <br />
         <Instructions />
       </div>
     )
