@@ -1,0 +1,9 @@
+{
+    "name": "drumbo",
+    "description": "Drum machine",
+    "repository": "https://github.com/tophersjones/drumboIV",
+    "keywords": [
+        "drums",
+        "node"
+    ]
+}

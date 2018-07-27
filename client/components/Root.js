@@ -134,9 +134,9 @@ class Root extends Component {
 
     return (
       <div id="container" onKeyDown={this.handleKeyPress}>
-        {
-          this.state.sounds.map((sound, index) => <Sound url={sound.url} playStatus={Sound.status.PLAYING} playFromPosition={0} key={index}/>)
-        }
+      {
+        this.state.sounds.map(sound => <Sound url={sound.url} playStatus={Sound.status.PLAYING} playFromPosition={0} />)
+      }
         <table id="iterator">
           <tbody>
             <tr>
