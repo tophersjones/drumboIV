@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 // import styles from '../../public/style'
-// import Sound from 'react-sound'
+import Sound from 'react-sound'
 import { connect } from 'react-redux'
 import InstButtons from './InstButtons'
 import { armInstrumentThunk, disarmInstrumentThunk, clearDrumboThunk } from '../store/instruments';
@@ -134,7 +134,9 @@ class Root extends Component {
 
     return (
       <div id="container" onKeyDown={this.handleKeyPress}>
-
+        {
+          this.state.sounds.map((sound, index) => <Sound url={sound.url} playStatus={Sound.status.PLAYING} playFromPosition={0} key={index}/>)
+        }
         <table id="iterator">
           <tbody>
             <tr>
