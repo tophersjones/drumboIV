@@ -164,7 +164,7 @@ class Root extends Component {
           </tbody>
         </table>
         <div id="buttons">
-          <form>
+          {/*<form>
             <label>
               Set Tempo (BPM):
                 <input 
@@ -183,7 +183,7 @@ class Root extends Component {
             >
             Set
             </button>
-          </form>
+          </form>*/}
             <br />
           <button
             type="submit"
