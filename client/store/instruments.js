@@ -5,6 +5,7 @@
 const ARM_INSTRUMENT = 'ARM_INSTRUMENT'
 const DISARM_INSTRUMENT = 'DISARM_INSTRUMENT'
 const CLEAR_DRUMBO = 'CLEAR_DRUMBO'
+const SAMPLE = 'SAMPLE'
 
 /**
  * INITIAL STATE
@@ -27,6 +28,28 @@ const initialState = {
   13: [],
   14: [],
   15: [],
+}
+
+const sampleState = {
+  0: [{url: "https://res.cloudinary.com/dl7gzlb0w/video/upload/v1531265492/Hat.mp3", instrument: "hat"},
+      {url: "https://res.cloudinary.com/dl7gzlb0w/video/upload/v1531265492/Kick.mp3", instrument: "kick"}],
+  1: [{url: "https://res.cloudinary.com/dl7gzlb0w/video/upload/v1531265492/Kick.mp3", instrument: "kick"}],
+  2: [],
+  3: [{url: "https://res.cloudinary.com/dl7gzlb0w/video/upload/v1531265492/Hat.mp3", instrument: "hat"}],
+  4: [{url: "https://res.cloudinary.com/dl7gzlb0w/video/upload/v1531265492/Ride.mp3", instrument: "ride"}],
+  5: [{url: "https://res.cloudinary.com/dl7gzlb0w/video/upload/v1531265492/Floor.mp3", instrument: "floor"}],
+  6: [{url: "https://res.cloudinary.com/dl7gzlb0w/video/upload/v1531265492/Hat.mp3", instrument: "hat"},
+      {url: "https://res.cloudinary.com/dl7gzlb0w/video/upload/v1531265492/Snare.mp3", instrument: "snare"}],
+  7: [],
+  8: [],
+  9: [{url: "https://res.cloudinary.com/dl7gzlb0w/video/upload/v1531265492/Ride.mp3", instrument: "ride"}],
+  10: [{url: "https://res.cloudinary.com/dl7gzlb0w/video/upload/v1531265492/Hat.mp3", instrument: "hat"}],
+  11: [],
+  12: [{url: "https://res.cloudinary.com/dl7gzlb0w/video/upload/v1531265492/Hat.mp3", instrument: "hat"},   
+       {url: "https://res.cloudinary.com/dl7gzlb0w/video/upload/v1531265492/Kick.mp3", instrument: "kick"}],
+  13: [{url: "https://res.cloudinary.com/dl7gzlb0w/video/upload/v1531265492/Kick.mp3", instrument: "kick"}],
+  14: [{url: "https://res.cloudinary.com/dl7gzlb0w/video/upload/v1531265492/Rack.mp3", instrument: "rack"}],
+  15: [{url: "https://res.cloudinary.com/dl7gzlb0w/video/upload/v1531265492/Rack.mp3", instrument: "rack"}]
 }
 
 /**
@@ -55,6 +78,12 @@ const clearDrumboAction = () => {
   }
 }
 
+const sampleAction = () => {
+  return {
+    type: SAMPLE
+  }
+}
+
 /**
  * THUNK CREATORS
  */
@@ -80,6 +109,13 @@ export const clearDrumboThunk = () => {
   }
 }
 
+export const sampleThunk = () => {
+  return dispatch => {
+    const action = sampleAction()
+    dispatch(action)
+  }
+}
+
 /**
  * REDUCER
  */
@@ -94,6 +130,8 @@ export default function(state = initialState, action) {
       return { ...state, [action.cellId]: filteredArr }
     case CLEAR_DRUMBO:
       return initialState 
+    case SAMPLE:
+      return sampleState
     default:
       return state
   }

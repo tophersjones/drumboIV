@@ -2,7 +2,8 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {withRouter, Route} from 'react-router-dom'
 import PropTypes from 'prop-types'
-import { UserHome } from './components'
+import { UserHome, TestComponent } from './components'
+
 import {me} from './store'
 
 
@@ -16,6 +17,7 @@ class Routes extends Component {
     return (
       <div>
         <Route path="/" component={UserHome} />
+        <Route path="/test" component={TestComponent} />
       </div>
     )
   }

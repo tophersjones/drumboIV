@@ -3,8 +3,9 @@ import React, { Component } from 'react'
 import Sound from 'react-sound'
 import { connect } from 'react-redux'
 import InstButtons from './InstButtons'
-import { armInstrumentThunk, disarmInstrumentThunk, clearDrumboThunk } from '../store/instruments';
+import { armInstrumentThunk, disarmInstrumentThunk, clearDrumboThunk, sampleThunk } from '../store/instruments';
 import Instructions from './Instructions'
+import { switchInstrumentThunk } from '../store/currentInst';
 
 class Root extends Component {
   constructor () {
@@ -82,11 +83,46 @@ class Root extends Component {
     this.setState({activeCell: 0})
   }
 
+  sampleBeat = () => {
+    this.props.sample()
+    this.props.switchInst('https://res.cloudinary.com/dl7gzlb0w/video/upload/v1531265492/Snare.mp3', 'snare')
+    const all = document.querySelectorAll("td")
+    const hat = document.querySelectorAll("td[value='0'], td[value='3'], td[value='6'], td[value='10'], td[value='12']")
+    const kick = document.querySelectorAll("td[value='0'], td[value='1'], td[value='12'], td[value='13']")
+    const snare = document.querySelectorAll("td[value='6']")
+    const ride = document.querySelectorAll("td[value='4'], td[value='9']")
+    const floor = document.querySelectorAll("td[value='5']")
+    const rack = document.querySelectorAll("td[value='14'], td[value='15']")
+    for (let i = 0; i < hat.length; i++) {
+      hat[i].classList = 'hat'
+    }
+    for (let i = 0; i < kick.length; i++) {
+      kick[i].classList = 'kick'
+    }
+    for (let i = 0; i < ride.length; i++) {
+      ride[i].classList = 'ride'
+    }
+    for (let i = 0; i < floor.length; i++) {
+      floor[i].classList = 'floor'
+    }
+    for (let i = 0; i < rack.length; i++) {
+      rack[i].classList = 'rack'
+    }
+    for (let i = 0; i < all.length; i++) {
+      all[i].classList = ""
+    }
+    for (let i = 0; i < snare.length; i++) {
+      snare[i].classList = 'snare'
+    }
+    console.log(all)
+  }
+
   handleClick = (event) => {
     const cell = event.currentTarget
     const cellId = Number(event.target.getAttribute('value'))
     const instObj = this.props.currentInstrument
     const instrument = this.props.currentInstrument.instrument
+    console.log(event)
     if (cell.classList.contains(instrument)) {
       cell.classList.remove(instrument)
       this.props.disarmInst(cellId, instObj)
@@ -136,7 +172,7 @@ class Root extends Component {
     return (
       <div id="container" onKeyDown={this.handleKeyPress}>
         {
-          this.state.sounds.map((sound, index) => <Sound url={sound.url} playStatus={Sound.status.PLAYING} playFromPosition={0} key={index}/>)
+          this.state.sounds.map((sound, index) => <Sound url={sound.url} playStatus={Sound.status.PLAYING} autoLoad={true} playFromPosition={0} key={index}/>)
         }
         <table id="iterator">
           <tbody>
@@ -185,27 +221,35 @@ class Root extends Component {
             </button>
           </form>*/}
             <br />
-          <button
-            type="submit"
-            value="Start"
-            disabled={this.state.isGoing} 
-            onClick={this.startIterator} > 
-              Start
-          </button>
-            <br />
-          <button
-            type="submit"
-            value="Stop"
-            disabled={!this.state.isGoing} 
-            onClick={this.stopIterator} > 
-              Stop
-          </button>
-            <br />
-          <button 
-            type="submit"
-            onClick={this.clearDrumbo} >
-              Clear
-          </button>
+          <div id="start">
+            <button
+              type="submit"
+              value="Start"
+              disabled={this.state.isGoing} 
+              onClick={this.startIterator} > 
+                Start
+            </button>
+              <br />
+            <button
+              type="submit"
+              value="Stop"
+              disabled={!this.state.isGoing} 
+              onClick={this.stopIterator} > 
+                Stop
+            </button>
+              <br />
+            <button 
+              type="submit"
+              onClick={this.clearDrumbo} >
+                Clear
+            </button>
+              <br />
+            <button 
+              type="submit"
+              onClick={this.sampleBeat} >
+              SAMPLE
+            </button>
+          </div>
         </div>
         <InstButtons />
         <br />
@@ -227,7 +271,9 @@ const mapDispatch = dispatch => {
   return {
     armInst: (cellId, instrument) => dispatch(armInstrumentThunk(cellId, instrument)),
     disarmInst: (cellId, instrument) => dispatch(disarmInstrumentThunk(cellId, instrument)),
-    clearDrumbo: () => dispatch(clearDrumboThunk())
+    clearDrumbo: () => dispatch(clearDrumboThunk()),
+    switchInst: (link, instrument) => dispatch(switchInstrumentThunk(link, instrument)),
+    sample: () => dispatch(sampleThunk())
   }
 }
 

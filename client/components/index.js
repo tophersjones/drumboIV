@@ -5,4 +5,5 @@
  */
 export {default as Navbar} from './navbar'
 export {default as UserHome} from './Root'
+export {default as TestComponent} from './TestComponent'
 export {Login, Signup} from './auth-form'

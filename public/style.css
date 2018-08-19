@@ -81,3 +81,8 @@ tr:nth-child(even) {
   background-color: rgb(143, 212, 212)
 }
 
+#start {
+  display: flex;
+  flex-direction: row;
+}
+
