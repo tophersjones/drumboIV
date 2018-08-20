@@ -86,35 +86,19 @@ class Root extends Component {
   sampleBeat = () => {
     this.props.sample()
     this.props.switchInst('https://res.cloudinary.com/dl7gzlb0w/video/upload/v1531265492/Snare.mp3', 'snare')
+    document.querySelectorAll("td[value='0'], td[value='3'], td[value='6'], td[value='10'], td[value='12']").classList = 'hat'
+    document.querySelectorAll("td[value='0'], td[value='1'], td[value='12'], td[value='13']").classList = 'kick'
+    document.querySelectorAll("td[value='4'], td[value ='9']").classList = 'ride'
+    document.querySelectorAll("td[value='5']").classList = 'floor'
+    document.querySelectorAll("td[value='14'], td[value='15']").classList = 'rack'
     const all = document.querySelectorAll("td")
-    const hat = document.querySelectorAll("td[value='0'], td[value='3'], td[value='6'], td[value='10'], td[value='12']")
-    const kick = document.querySelectorAll("td[value='0'], td[value='1'], td[value='12'], td[value='13']")
-    const snare = document.querySelectorAll("td[value='6']")
-    const ride = document.querySelectorAll("td[value='4'], td[value='9']")
-    const floor = document.querySelectorAll("td[value='5']")
-    const rack = document.querySelectorAll("td[value='14'], td[value='15']")
-    for (let i = 0; i < hat.length; i++) {
-      hat[i].classList = 'hat'
-    }
-    for (let i = 0; i < kick.length; i++) {
-      kick[i].classList = 'kick'
-    }
-    for (let i = 0; i < ride.length; i++) {
-      ride[i].classList = 'ride'
-    }
-    for (let i = 0; i < floor.length; i++) {
-      floor[i].classList = 'floor'
-    }
-    for (let i = 0; i < rack.length; i++) {
-      rack[i].classList = 'rack'
-    }
     for (let i = 0; i < all.length; i++) {
-      all[i].classList = ""
+      all[i].classList = ''
     }
+    const snare = document.querySelectorAll("td[value='6']")
     for (let i = 0; i < snare.length; i++) {
       snare[i].classList = 'snare'
     }
-    console.log(all)
   }
 
   handleClick = (event) => {
