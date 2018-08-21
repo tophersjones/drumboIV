@@ -14,7 +14,7 @@ const Instructions = () => {
       2. Click a cell above to enable playback for the cell/selected instrument, click again to disable
     </div>
     <div>
-      3. Press Spacebar or click Start to begin playing! You click cells as Drumbo is playing
+      3. Press Spacebar or click Start to begin playing! You can click cells as Drumbo is playing
     </div>
     <div>
       4. Switch instruments and click as many cells as you'd like- click SAMPLE BEAT to load a pre-populated beat.
