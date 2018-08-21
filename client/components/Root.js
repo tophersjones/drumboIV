@@ -16,7 +16,8 @@ class Root extends Component {
       tempoInMs: 180,
       intervalId: '',
       isGoing: false,
-      sounds: []
+      sounds: [],
+      showInstructions: false
     }
   }
 
@@ -231,7 +232,7 @@ class Root extends Component {
             <button 
               type="submit"
               onClick={this.sampleBeat} >
-              SAMPLE
+              SAMPLE BEAT
             </button>
           </div>
         </div>
