@@ -31,70 +31,71 @@ class InstButtons extends Component {
   }
 
   render() {
+    const url = 'https://res.cloudinary.com/dl7gzlb0w/video/upload/v1531265492/'
     return (
       <div id="instrument buttons">
         <form>
-          <label>
+          <label className='text'>
             <input 
               type="radio"
               onChange={this.handleChange}
-              value='https://res.cloudinary.com/dl7gzlb0w/video/upload/v1531265492/Snare.mp3'
+              value={url + 'Snare.mp3'}
               instrument='snare'
-              checked={this.props.currentInstrument.url === 'https://res.cloudinary.com/dl7gzlb0w/video/upload/v1531265492/Snare.mp3'} />
+              checked={this.props.currentInstrument.url === url + 'Snare.mp3'} />
               Snare
           </label>
-          <label>
+          <label className='text'>
             <input
               type="radio"
               onChange={this.handleChange}
-              value='https://res.cloudinary.com/dl7gzlb0w/video/upload/v1531265492/Kick.mp3'
+              value={url + 'Kick.mp3'}
               instrument='kick'
-              checked={this.props.currentInstrument.url === 'https://res.cloudinary.com/dl7gzlb0w/video/upload/v1531265492/Kick.mp3'} />
-              Kick Drum
+              checked={this.props.currentInstrument.url === url + 'Kick.mp3'} />
+                 Kick Drum
           </label>
-          <label>
+          <label className='text'>
             <input
               type="radio"
               onChange={this.handleChange}
-              value='https://res.cloudinary.com/dl7gzlb0w/video/upload/v1531265492/Floor.mp3' 
+              value={url + 'Floor.mp3'} 
               instrument='floor'
-              checked={this.props.currentInstrument.url === 'https://res.cloudinary.com/dl7gzlb0w/video/upload/v1531265492/Floor.mp3'} />
-              Floor Tom
+              checked={this.props.currentInstrument.url === url + 'Floor.mp3'} />
+                 Floor Tom
           </label>
-          <label>
+          <label className='text'>
             <input
               type="radio"
               onChange={this.handleChange}
-              value='https://res.cloudinary.com/dl7gzlb0w/video/upload/v1531265492/Rack.mp3' 
+              value={url + 'Rack.mp3'} 
               instrument='rack'
-              checked={this.props.currentInstrument.url === 'https://res.cloudinary.com/dl7gzlb0w/video/upload/v1531265492/Rack.mp3'} />
+              checked={this.props.currentInstrument.url === url + 'Rack.mp3'} />
               Rack Tom
           </label>
-          <label>
+          <label className='text'>
             <input
               type="radio"
               onChange={this.handleChange}
-              value='https://res.cloudinary.com/dl7gzlb0w/video/upload/v1531265492/Hat.mp3' 
+              value={url + 'Hat.mp3'} 
               instrument='hat'
-              checked={this.props.currentInstrument.url === 'https://res.cloudinary.com/dl7gzlb0w/video/upload/v1531265492/Hat.mp3'} />
+              checked={this.props.currentInstrument.url === url + 'Hat.mp3'} />
               Hi-Hat
           </label>
-          <label>
+          <label className='text'>
             <input
               type="radio"
               onChange={this.handleChange}
-              value='https://res.cloudinary.com/dl7gzlb0w/video/upload/v1531265492/Ride.mp3' 
+              value={url + 'Ride.mp3'} 
               instrument='ride'
-              checked={this.props.currentInstrument.url === 'https://res.cloudinary.com/dl7gzlb0w/video/upload/v1531265492/Ride.mp3'} />
+              checked={this.props.currentInstrument.url === url + 'Ride.mp3'} />
               Ride
           </label>
-          <label>
+          <label className='text'>
             <input
               type="radio"
               onChange={this.handleChange}
-              value='https://res.cloudinary.com/dl7gzlb0w/video/upload/v1531265492/Crash.mp3' 
+              value={url + 'Crash.mp3'}
               instrument='crash'
-              checked={this.props.currentInstrument.url === 'https://res.cloudinary.com/dl7gzlb0w/video/upload/v1531265492/Crash.mp3'} />
+              checked={this.props.currentInstrument.url === url + 'Crash.mp3'} />
               Crash
           </label>
         </form>

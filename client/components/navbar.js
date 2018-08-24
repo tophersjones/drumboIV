@@ -1,11 +1,8 @@
 import React from 'react'
 
 const Navbar = () => (
-  <div>
+  <div className="text" >
     <h1>DRUMBOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO</h1>
-    <nav>
-    </nav>
-    <hr />
     </div>
   )
 

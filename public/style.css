@@ -10,33 +10,6 @@ label {
   display: block;
 }
 
-nav a {
-  display: inline-block;
-  margin: 1em;
-}
-
-form div {
-  margin: 1em;
-  display: inline-block;
-}
-
-#container {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
-
-#iterator td {
-  border: 2px solid rgb(39, 22, 22);
-  width: 118px;
-  height: 66px;
-  border-radius: 50%;
-}
-
-tr:nth-child(even) {
-  height: 50px;
-}
-
 .inactive {
   background-color: antiquewhite;
 }
@@ -81,8 +54,38 @@ tr:nth-child(even) {
   background-color: rgb(143, 212, 212)
 }
 
+nav a {
+  display: inline-block;
+  margin: 1em;
+}
+
+form div {
+  margin: 1em;
+  display: inline-block;
+}
+
+#container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+#iterator td {
+  border: 2.5px solid rgb(39, 22, 22);
+  width: 100px;
+  height: 100px;
+  border-radius: 43%;
+}
+
 #start {
   display: flex;
   flex-direction: row;
 }
 
+.text {
+  font-family: "Gill Sans", sans-serif
+}
+
+.test {
+  background-color: bisque
+}

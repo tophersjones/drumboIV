@@ -6,6 +6,7 @@ import InstButtons from './InstButtons'
 import { armInstrumentThunk, disarmInstrumentThunk, clearDrumboThunk, sampleThunk } from '../store/instruments';
 import Instructions from './Instructions'
 import { switchInstrumentThunk } from '../store/currentInst';
+import Button from 'muicss/lib/react/button'
 
 class Root extends Component {
   constructor () {
@@ -17,7 +18,6 @@ class Root extends Component {
       intervalId: '',
       isGoing: false,
       sounds: [],
-      showInstructions: false
     }
   }
 
@@ -161,7 +161,7 @@ class Root extends Component {
         }
         <table id="iterator">
           <tbody>
-            <tr>
+            <tr id="cell">
           { 
             iterator.map(cell => 
               (cell.active ?
@@ -207,37 +207,45 @@ class Root extends Component {
           </form>*/}
             <br />
           <div id="start">
-            <button
+            <Button
+              color="primary"
+              className="text"
               type="submit"
               value="Start"
               disabled={this.state.isGoing} 
               onClick={this.startIterator} > 
                 Start
-            </button>
+            </Button>
               <br />
-            <button
+            <Button
+              color="primary"
+              className="text"
               type="submit"
               value="Stop"
               disabled={!this.state.isGoing} 
               onClick={this.stopIterator} > 
                 Stop
-            </button>
+            </Button>
               <br />
-            <button 
+            <Button 
+              color="danger"
               type="submit"
+              className="text"
               onClick={this.clearDrumbo} >
                 Clear
-            </button>
+            </Button>
               <br />
-            <button 
+            <Button 
+              color="accent"
               type="submit"
+              className="text test"
               onClick={this.sampleBeat} >
               SAMPLE BEAT
-            </button>
+            </Button>
           </div>
         </div>
-        <InstButtons />
         <br />
+        <InstButtons />
         <br />
         <Instructions />
       </div>

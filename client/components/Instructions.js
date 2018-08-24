@@ -2,7 +2,7 @@ import React from 'react'
 
 const Instructions = () => {
   return (
-  <div id="instructions">
+  <div className="text" >
     <br />
     <div>
     INSTRUCTIONS
