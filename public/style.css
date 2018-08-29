@@ -101,3 +101,8 @@ label {
 input[type="radio"] {
   margin-right: .5em;
 }
+
+#start button {
+  border: 2px solid rgb(39, 22, 22);
+  border-radius: 46%;
+}
