@@ -209,7 +209,7 @@ class Root extends Component {
           <div id="start">
             <Button
               color="primary"
-              className="text"
+              className="button"
               type="submit"
               value="Start"
               disabled={this.state.isGoing} 
@@ -219,7 +219,7 @@ class Root extends Component {
               <br />
             <Button
               color="primary"
-              className="text"
+              className="button"
               type="submit"
               value="Stop"
               disabled={!this.state.isGoing} 
@@ -230,7 +230,7 @@ class Root extends Component {
             <Button 
               color="danger"
               type="submit"
-              className="text"
+              className="button"
               onClick={this.clearDrumbo} >
                 Clear
             </Button>
@@ -238,7 +238,7 @@ class Root extends Component {
             <Button 
               color="accent"
               type="submit"
-              className="text test"
+              className="button"
               onClick={this.sampleBeat} >
               SAMPLE BEAT
             </Button>
@@ -246,7 +246,6 @@ class Root extends Component {
         </div>
         <br />
         <InstButtons />
-        <br />
         <Instructions />
       </div>
     )

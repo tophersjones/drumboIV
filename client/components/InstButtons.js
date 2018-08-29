@@ -51,7 +51,7 @@ class InstButtons extends Component {
               value={url + 'Kick.mp3'}
               instrument='kick'
               checked={this.props.currentInstrument.url === url + 'Kick.mp3'} />
-                 Kick Drum
+              Kick Drum
           </label>
           <label className='text'>
             <input
@@ -60,7 +60,7 @@ class InstButtons extends Component {
               value={url + 'Floor.mp3'} 
               instrument='floor'
               checked={this.props.currentInstrument.url === url + 'Floor.mp3'} />
-                 Floor Tom
+              Floor Tom
           </label>
           <label className='text'>
             <input

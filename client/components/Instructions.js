@@ -21,7 +21,7 @@ const Instructions = () => {
     </div>
     <br />
     <div>
-    Recommended browsers: Chrome, Firefox,
+    Recommended browsers: Chrome, Firefox.
     Drumbo may not produce sound on mobile devices.
     </div>
   </div>

@@ -71,7 +71,7 @@ form div {
 }
 
 #iterator td {
-  border: 2.5px solid rgb(39, 22, 22);
+  border: 3px solid rgb(39, 22, 22);
   width: 100px;
   height: 100px;
   border-radius: 43%;
@@ -83,9 +83,21 @@ form div {
 }
 
 .text {
-  font-family: "Gill Sans", sans-serif
+  font-family: "Gill Sans", sans-serif;
 }
 
 .test {
-  background-color: bisque
+  background-color: bisque;
+}
+
+.button {
+  border-radius: 25%;
+}
+
+label {
+  margin: .25em
+}
+
+input[type="radio"] {
+  margin-right: .5em;
 }
