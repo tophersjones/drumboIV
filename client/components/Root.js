@@ -87,11 +87,6 @@ class Root extends Component {
   sampleBeat = () => {
     this.props.sample()
     this.props.switchInst('https://res.cloudinary.com/dl7gzlb0w/video/upload/v1531265492/Snare.mp3', 'snare')
-    document.querySelectorAll("td[value='0'], td[value='3'], td[value='6'], td[value='10'], td[value='12']").classList = 'hat'
-    document.querySelectorAll("td[value='0'], td[value='1'], td[value='12'], td[value='13']").classList = 'kick'
-    document.querySelectorAll("td[value='4'], td[value ='9']").classList = 'ride'
-    document.querySelectorAll("td[value='5']").classList = 'floor'
-    document.querySelectorAll("td[value='14'], td[value='15']").classList = 'rack'
     const all = document.querySelectorAll("td")
     for (let i = 0; i < all.length; i++) {
       all[i].classList = ''
@@ -107,7 +102,6 @@ class Root extends Component {
     const cellId = Number(event.target.getAttribute('value'))
     const instObj = this.props.currentInstrument
     const instrument = this.props.currentInstrument.instrument
-    console.log(event)
     if (cell.classList.contains(instrument)) {
       cell.classList.remove(instrument)
       this.props.disarmInst(cellId, instObj)
@@ -154,11 +148,11 @@ class Root extends Component {
       cell.active = 0
     })
 
+    const sounds = this.state.sounds.map((sound, index) => <Sound url={sound.url} playStatus={Sound.status.PLAYING} autoLoad={true} playFromPosition={0} key={index} onFinishedPlaying={console.log('99999')} />)
+
     return (
       <div id="container" onKeyDown={this.handleKeyPress}>
-        {
-          this.state.sounds.map((sound, index) => <Sound url={sound.url} playStatus={Sound.status.PLAYING} autoLoad={true} playFromPosition={0} key={index}/>)
-        }
+        {sounds}
         <table id="iterator">
           <tbody>
             <tr id="cell">
