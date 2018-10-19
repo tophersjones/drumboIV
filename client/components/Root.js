@@ -148,7 +148,7 @@ class Root extends Component {
       cell.active = 0
     })
 
-    const sounds = this.state.sounds.map((sound, index) => <Sound url={sound.url} playStatus={Sound.status.PLAYING} autoLoad={true} playFromPosition={0} key={index} onFinishedPlaying={console.log('99999')} />)
+    const sounds = this.state.sounds.map((sound, index) => <Sound url={sound.url} playStatus={Sound.status.PLAYING} autoLoad={true} playFromPosition={0} key={index} />)
 
     return (
       <div id="container" onKeyDown={this.handleKeyPress}>
